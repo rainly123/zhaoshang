@@ -2,6 +2,7 @@
 $(document).ready(function(){
 	 $(".nav_ul li:eq(3)").addClass("cur")
 	 $(".shop_class ul li:eq(0)").addClass("shop_active")
+	 $(".tab ul li:eq(0)").addClass("current")
 	/*这是导航nav*/
     $(".nav_ul li").click(
 					function(){ 
@@ -28,5 +29,13 @@ $(document).ready(function(){
 			$(this).addClass("shop_active")
 			return false;
 			})
+		$(".tab ul li").click(
+					function(){
+							num=$(this).index();
+							$(".regbox").hide();
+							$(".regbox:eq("+num+")").show();
+							$(".tab ul li").removeClass("current")
+							$(this).addClass("current")
+							})
 });
 	
